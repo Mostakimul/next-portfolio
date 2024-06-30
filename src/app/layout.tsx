@@ -1,3 +1,4 @@
+import Header from '@/components/home/Header';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -16,7 +17,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={`${inter.className} bg-pattern text-gray-50`}>
+        <div className="h-screen w-full">
+          <div className="p-7 pb-14 h-full">
+            <div className="container mx-auto">
+              <Header />
+              {children}
+            </div>
+          </div>
+        </div>
+      </body>
     </html>
   );
 }

@@ -1,4 +1,3 @@
-import Header from '@/components/home/Header';
 import Profile from '@/components/home/Profile';
 
 export const metadata = {
@@ -9,7 +8,6 @@ export const metadata = {
 export default function MyHome() {
   return (
     <div className="h-full">
-      <Header />
       <Profile />
     </div>
   );
