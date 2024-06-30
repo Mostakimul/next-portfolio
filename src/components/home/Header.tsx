@@ -63,10 +63,7 @@ export default function Header() {
             >
               {links.map((link) => (
                 <MenuItem key={link.href}>
-                  <Link
-                    className="flex items-center justify-center p-2 gap-2 px-4 py-2 active:bg-gradient-to-r active:from-orange-600 active:to-pink-600 hover:bg-gradient-to-r hover:from-orange-600 hover:to-pink-600  text-gray-50 rounded"
-                    href={link.href}
-                  >
+                  <Link className="btn-gradient" href={link.href}>
                     {link.icon}
                     {link.label}
                   </Link>

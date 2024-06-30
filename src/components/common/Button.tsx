@@ -1,15 +1,14 @@
 type ButtonProps = {
-  text: string;
+  children: React.ReactNode;
   click?: () => void;
+  icon?: React.ReactElement;
 };
 
-const Button = ({ text, click }: ButtonProps) => {
+const Button = ({ children, click, icon }: ButtonProps) => {
   return (
-    <button
-      onClick={click}
-      className="flex justify-center items-center gap-2 px-4 py-2 active:bg-gradient-to-r active:from-orange-600 active:to-pink-600 hover:bg-gradient-to-r hover:from-orange-600 hover:to-pink-600 bg-gray-800 text-gray-50 rounded"
-    >
-      {text}
+    <button onClick={click} className="btn-gradient">
+      {icon}
+      {children}
     </button>
   );
 };
