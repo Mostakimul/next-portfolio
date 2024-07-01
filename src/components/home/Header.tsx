@@ -26,7 +26,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <div className="">
+    <header className="mb-12">
       <div className="grid grid-cols-2">
         {/* Logo Section */}
         <div>
@@ -73,6 +73,6 @@ export default function Header() {
           </Menu>
         </div>
       </div>
-    </div>
+    </header>
   );
 }

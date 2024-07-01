@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-pattern text-gray-50`}>
         <div className="h-screen w-full">
-          <div className="p-7 pb-14 h-full">
+          <div className="pt-7 pb-14 h-full">
             <div className="container mx-auto">
               <Header />
               {children}
