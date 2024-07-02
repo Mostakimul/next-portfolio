@@ -1,9 +1,4 @@
-import React from 'react';
-
-type PageTitleProps = {
-  title: string;
-  icon: React.ReactElement;
-};
+import { PageTitleProps } from '@/types/common';
 
 const PageTitle = ({ title, icon }: PageTitleProps) => {
   return (
