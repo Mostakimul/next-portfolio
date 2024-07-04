@@ -15,11 +15,15 @@ type Link = {
   link: string;
 };
 
-export type WorkCardProps = {
+export type Work = {
   imageSrc: string;
   title: string;
   badges: Link[];
-  link: string;
+  id: string;
+};
+
+export type WorkCardProps = {
+  work: Work;
 };
 
 export type Blog = {

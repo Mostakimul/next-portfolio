@@ -4,40 +4,61 @@ import { MdOutlineWorkOutline } from 'react-icons/md';
 
 const myWorks = [
   {
+    id: '1',
     imageSrc: '/assets/nuxt.png',
-    title: 'Nuxt App',
-    badges: [{ link: '', title: 'Github' }],
-    link: '12',
+    title: 'Nuxt Blog',
+    badges: [
+      { link: 'https://github.com/username/nuxt-blog', title: 'Github' },
+      { link: 'https://nuxt-blog.example.com', title: 'Live' },
+    ],
   },
   {
+    id: '2',
     imageSrc: '/assets/nuxt.png',
-    title: 'Nuxt App',
-    badges: [{ link: '', title: 'Github' }],
-    link: '13',
+    title: 'Nuxt E-commerce',
+    badges: [
+      { link: 'https://github.com/username/nuxt-ecommerce', title: 'Github' },
+      { link: 'https://nuxt-ecommerce.example.com', title: 'Live' },
+    ],
   },
   {
+    id: '3',
     imageSrc: '/assets/nuxt.png',
-    title: 'Nuxt App',
-    badges: [{ link: '', title: 'Github' }],
-    link: '14',
+    title: 'Nuxt Portfolio',
+    badges: [
+      { link: 'https://github.com/username/nuxt-portfolio', title: 'Github' },
+      { link: 'https://nuxt-portfolio.example.com', title: 'Live' },
+    ],
   },
   {
+    id: '4',
     imageSrc: '/assets/nuxt.png',
-    title: 'Nuxt App',
-    badges: [{ link: '', title: 'Github' }],
-    link: '15',
+    title: 'Nuxt CMS',
+    badges: [
+      { link: 'https://github.com/username/nuxt-cms', title: 'Github' },
+      { link: 'https://nuxt-cms.example.com', title: 'Live' },
+    ],
   },
   {
+    id: '5',
     imageSrc: '/assets/nuxt.png',
-    title: 'Nuxt App',
-    badges: [{ link: '', title: 'Github' }],
-    link: '16',
+    title: 'Nuxt Dashboard',
+    badges: [
+      { link: 'https://github.com/username/nuxt-dashboard', title: 'Github' },
+      { link: 'https://nuxt-dashboard.example.com', title: 'Live' },
+    ],
   },
   {
+    id: '6',
     imageSrc: '/assets/nuxt.png',
-    title: 'Nuxt App',
-    badges: [{ link: '', title: 'Github' }],
-    link: '17',
+    title: 'Nuxt Landing Page',
+    badges: [
+      {
+        link: 'https://github.com/username/nuxt-landing-page',
+        title: 'Github',
+      },
+      { link: 'https://nuxt-landing-page.example.com', title: 'Live' },
+    ],
   },
 ];
 
@@ -50,13 +71,7 @@ const Works = () => {
         <section>
           <div className="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {myWorks.map((wk) => (
-              <WorkCard
-                key={wk.link}
-                imageSrc={wk.imageSrc}
-                title={wk.title}
-                badges={wk.badges}
-                link={wk.link}
-              />
+              <WorkCard key={wk.id} work={wk} />
             ))}
           </div>
         </section>
