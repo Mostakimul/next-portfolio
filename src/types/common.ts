@@ -21,3 +21,15 @@ export type WorkCardProps = {
   badges: Link[];
   link: string;
 };
+
+export type Blog = {
+  id: string;
+  title: string;
+  author: string;
+  content: string;
+  createdAt: string;
+};
+
+export type BlogCardProps = {
+  blog: Blog;
+};
