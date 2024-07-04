@@ -1,9 +1,9 @@
 import Header from '@/components/home/Header';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Josefin_Sans } from 'next/font/google';
 import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const josefin = Josefin_Sans({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: "Mostakimul's Portfolio",
@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-pattern text-gray-50`}>
+      <body className={`${josefin.className} bg-pattern text-gray-50`}>
         <div className="h-screen w-full">
           <div className="pt-7 pb-14 h-full">
             <div className="container mx-auto">
