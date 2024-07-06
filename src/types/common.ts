@@ -37,3 +37,30 @@ export type Blog = {
 export type BlogCardProps = {
   blog: Blog;
 };
+
+export type ExperienceType = {
+  _id: string;
+  timeFrame: string;
+  role: string;
+  company: string;
+  location: string;
+  createdAt: string;
+  updatedAt: string;
+};
+
+export type ExperienceProps = {
+  experiences: ExperienceType[];
+};
+
+export type Skill = {
+  _id: string;
+  skill: string;
+  icon: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+};
+
+export type SkillProps = {
+  skills: Skill[];
+};
