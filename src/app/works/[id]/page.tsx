@@ -8,9 +8,6 @@ const SingleWork = async ({ params }: { params: { id: string } }) => {
 
   const project = await res.json();
   const projectData = project.data;
-
-  console.log(projectData);
-
   return (
     <main>
       <div className="bg-gray-900 rounded w-full  p-10 text-white">
