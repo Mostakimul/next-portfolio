@@ -1,26 +1,25 @@
 import PageTitle from '@/components/common/PageTitle';
 
-// async function fetchBlog(id: string): Promise<Blog> {
-//   const res = await fetch(`https://api.example.com/blogs/${id}`);
-//   if (!res.ok) {
-//     throw new Error('Failed to fetch the blog data');
-//   }
-//   return res.json();
-// }
-
 const SingleBlog = async ({ params }: { params: { id: string } }) => {
-  // const blog = await fetchBlog(params.id);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_APP_API_URL}/blogs/${params.id}`,
+  );
+  const blog = await res.json();
+  const blogData = blog.data;
+
   return (
     <main>
       <div className="bg-gray-900 rounded w-full  p-10 text-white">
-        <PageTitle title={params.id} />
+        <PageTitle title={blogData?.title} />
 
         <section className="mt-5">
           <div className="mb-4">
-            <p className="text-gray-400">{`By ${'Mohit'} on ${'blog.createdAt'}`}</p>
+            <p className="text-gray-400">{`By ${blogData?.author} on ${new Date(
+              blogData?.createdAt,
+            ).toLocaleDateString()}`}</p>
           </div>
           <div className="text-gray-300">
-            <p>{'blog.content'}</p>
+            <p>{blogData?.content}</p>
           </div>
         </section>
       </div>
