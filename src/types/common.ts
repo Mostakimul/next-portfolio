@@ -71,3 +71,28 @@ export type BlogProps = {
 export type BlogCardProps = {
   blog: BlogType;
 };
+
+export type Badge = {
+  _id: string;
+  title: string;
+  link: string;
+};
+
+export type Project = {
+  _id: string;
+  title: string;
+  description: string;
+  imageSrc: string;
+  badges: Badge[];
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+};
+
+export type ProjectProps = {
+  works: Project[];
+};
+
+export type ProjectCardProps = {
+  work: Project;
+};

@@ -1,8 +1,8 @@
-import { WorkCardProps } from '@/types/common';
+import { ProjectCardProps } from '@/types/common';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const WorkCard = ({ work }: WorkCardProps) => {
+const WorkCard = ({ work }: ProjectCardProps) => {
   return (
     <div className="rounded w-full overflow-hidden shadow-lg bg-white border border-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
       <div className="bg-white rounded p-1">
@@ -10,8 +10,8 @@ const WorkCard = ({ work }: WorkCardProps) => {
           className="rounded w-full"
           src={work.imageSrc}
           alt={'work'}
-          width={400}
-          height={300}
+          width={80}
+          height={80}
         />
         <div className="px-3 py-4">
           <div className="font-bold text-xl mb-2 text-black">{work.title}</div>
@@ -27,7 +27,7 @@ const WorkCard = ({ work }: WorkCardProps) => {
             ))}
           </div>
           <Link
-            href={`works/${work.id}`}
+            href={`works/${work._id}`}
             className="px-4 py-2 rounded font-light hover:bg-gradient-to-r hover:from-gray-600 hover:to-gray-800 bg-gradient-to-r from-orange-600 to-pink-600 text-center mt-5 w-1/3"
           >
             View Details

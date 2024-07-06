@@ -1,5 +1,5 @@
 import PageTitle from '@/components/common/PageTitle';
-import WorkCard from '@/components/common/WorkCard';
+import Projects from '@/components/Projects';
 import { MdOutlineWorkOutline } from 'react-icons/md';
 
 const myWorks = [
@@ -62,19 +62,16 @@ const myWorks = [
   },
 ];
 
-const Works = () => {
+const Works = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_API_URL}/projects`);
+  const works = await res.json();
+
   return (
     <main>
       <div className="bg-gray-900 rounded w-full h-full p-10">
         <PageTitle title="Portfolio" icon={<MdOutlineWorkOutline />} />
 
-        <section>
-          <div className="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {myWorks.map((wk) => (
-              <WorkCard key={wk.id} work={wk} />
-            ))}
-          </div>
-        </section>
+        {works.data && <Projects works={works.data} />}
       </div>
     </main>
   );
