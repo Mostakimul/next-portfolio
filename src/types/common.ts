@@ -26,18 +26,6 @@ export type WorkCardProps = {
   work: Work;
 };
 
-export type Blog = {
-  id: string;
-  title: string;
-  author: string;
-  content: string;
-  createdAt: string;
-};
-
-export type BlogCardProps = {
-  blog: Blog;
-};
-
 export type ExperienceType = {
   _id: string;
   timeFrame: string;
@@ -63,4 +51,23 @@ export type Skill = {
 
 export type SkillProps = {
   skills: Skill[];
+};
+
+export type BlogType = {
+  _id: string;
+  title: string;
+  content: string;
+  author: string;
+  coverImage: string;
+  createdAt: string;
+  updatedAt: string;
+  __v: number;
+};
+
+export type BlogProps = {
+  blogs: BlogType[];
+};
+
+export type BlogCardProps = {
+  blog: BlogType;
 };

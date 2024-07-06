@@ -1,4 +1,4 @@
-import BlogCard from '@/components/common/BlogCard';
+import BlogSec from '@/components/BlogSec';
 import PageTitle from '@/components/common/PageTitle';
 import { RiBloggerLine } from 'react-icons/ri';
 
@@ -77,19 +77,16 @@ const blogs = [
   },
 ];
 
-const Blogs = () => {
+const Blogs = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_API_URL}/blogs`);
+  const blogs = await res.json();
+
   return (
     <main>
       <div className="bg-gray-900 rounded w-full h-full p-10">
         <PageTitle title="Blogs" icon={<RiBloggerLine />} />
 
-        <section>
-          <div className="grid place-items-center grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-            {blogs.map((bl) => (
-              <BlogCard key={bl.id} blog={bl} />
-            ))}
-          </div>
-        </section>
+        {blogs.data && <BlogSec blogs={blogs.data} />}
       </div>
     </main>
   );

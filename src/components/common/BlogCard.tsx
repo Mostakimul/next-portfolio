@@ -18,11 +18,11 @@ const BlogCard = ({ blog }: BlogCardProps) => {
         <div className="my-4">
           <span className="text-gray-50 text-sm">By {blog.author}</span>
           <span className="text-gray-50 text-sm float-right">
-            {blog.createdAt}
+            {new Date(blog.createdAt).toLocaleDateString()}
           </span>
         </div>
         <Link
-          href={`/blogs/${blog.id}`}
+          href={`/blogs/${blog._id}`}
           className="px-4 py-2 rounded font-light hover:bg-gradient-to-r hover:from-gray-600 hover:to-gray-800 bg-gradient-to-r from-orange-600 to-pink-600 text-center mt-5 w-1/3"
         >
           Read More
