@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import { BsArrowDownCircle } from 'react-icons/bs';
 import { CiLinkedin } from 'react-icons/ci';
 import { LuTwitter } from 'react-icons/lu';
 import { VscGithubInverted } from 'react-icons/vsc';
 import profileImage from '../../../public/assets/profile2.jpg';
+import ResumeButton from './ResumeButton';
 
 const Profile = () => {
   return (
@@ -51,9 +51,7 @@ const Profile = () => {
             </a>
           </div>
           {/* Resume download button */}
-          <button className="btn-gradient-reverese text-2xl">
-            <BsArrowDownCircle /> Download Resume
-          </button>
+          <ResumeButton />
         </div>
       </div>
     </section>
