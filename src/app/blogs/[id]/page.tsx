@@ -10,18 +10,24 @@ const SingleBlog = async ({ params }: { params: { id: string } }) => {
   return (
     <main>
       <div className="bg-gray-900 rounded w-full  p-10 text-white">
-        <PageTitle title={blogData?.title} />
+        {blogData ? (
+          <>
+            <PageTitle title={blogData?.title} />
 
-        <section className="mt-5">
-          <div className="mb-4">
-            <p className="text-gray-400">{`By ${blogData?.author} on ${new Date(
-              blogData?.createdAt,
-            ).toLocaleDateString()}`}</p>
-          </div>
-          <div className="text-gray-300">
-            <p>{parse(blogData?.content)}</p>
-          </div>
-        </section>
+            <section className="mt-5">
+              <div className="mb-4">
+                <p className="text-gray-400">{`By ${
+                  blogData?.author
+                } on ${new Date(blogData?.createdAt).toLocaleDateString()}`}</p>
+              </div>
+              <div className="text-gray-300">
+                <p>{parse(blogData?.content)}</p>
+              </div>
+            </section>
+          </>
+        ) : (
+          'Loading....'
+        )}
       </div>
     </main>
   );
