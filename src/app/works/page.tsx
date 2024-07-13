@@ -3,7 +3,9 @@ import Projects from '@/components/Projects';
 import { MdOutlineWorkOutline } from 'react-icons/md';
 
 const Works = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_API_URL}/projects`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_APP_API_URL}/projects`, {
+    cache: 'no-store',
+  });
   const works = await res.json();
 
   return (

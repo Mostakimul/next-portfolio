@@ -4,6 +4,9 @@ import Image from 'next/image';
 const SingleWork = async ({ params }: { params: { id: string } }) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_APP_API_URL}/projects/${params.id}`,
+    {
+      cache: 'no-store',
+    },
   );
 
   const project = await res.json();

@@ -3,6 +3,9 @@ import parse from 'html-react-parser';
 const SingleBlog = async ({ params }: { params: { id: string } }) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_APP_API_URL}/blogs/${params.id}`,
+    {
+      cache: 'no-store',
+    },
   );
   const blog = await res.json();
   const blogData = blog.data;
