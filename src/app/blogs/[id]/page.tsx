@@ -1,5 +1,5 @@
 import PageTitle from '@/components/common/PageTitle';
-
+import parse from 'html-react-parser';
 const SingleBlog = async ({ params }: { params: { id: string } }) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_APP_API_URL}/blogs/${params.id}`,
@@ -19,7 +19,7 @@ const SingleBlog = async ({ params }: { params: { id: string } }) => {
             ).toLocaleDateString()}`}</p>
           </div>
           <div className="text-gray-300">
-            <p>{blogData?.content}</p>
+            <p>{parse(blogData?.content)}</p>
           </div>
         </section>
       </div>

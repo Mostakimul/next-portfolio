@@ -1,6 +1,6 @@
 import { BlogCardProps } from '@/types/common';
+import parse from 'html-react-parser';
 import Link from 'next/link';
-
 const BlogCard = ({ blog }: BlogCardProps) => {
   return (
     <div
@@ -12,8 +12,8 @@ const BlogCard = ({ blog }: BlogCardProps) => {
           {blog.title}
           <span className="absolute left-0 bottom-0 w-full h-[1px] bg-gradient-to-r from-purple-400 via-pink-500 to-red-500"></span>
         </div>
-        <p className="text-gray-50 text-base">
-          {blog.content.substring(0, 50)}...
+        <p className="text-gray-50 text-base line-clamp-3">
+          {parse(blog.content)}...
         </p>
         <div className="my-4">
           <span className="text-gray-50 text-sm">By {blog.author}</span>

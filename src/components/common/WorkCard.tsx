@@ -4,17 +4,13 @@ import Link from 'next/link';
 
 const WorkCard = ({ work }: ProjectCardProps) => {
   return (
-    <div className="rounded w-full overflow-hidden shadow-lg bg-white border border-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-red-500">
-      <div className="bg-white rounded p-1">
-        <Image
-          className="rounded w-full"
-          src={work.imageSrc}
-          alt={'work'}
-          width={80}
-          height={80}
-        />
-        <div className="px-3 py-4">
-          <div className="font-bold text-xl mb-2 text-black">{work.title}</div>
+    <div
+      className="rounded w-full overflow-hidden shadow-lg bg-white border border-transparent bg-cover bg-center h-72"
+      style={{ backgroundImage: "url('/assets/blog.png')" }}
+    >
+      <div className="rounded bg-gray-600 bg-opacity-80 h-full px-5 py-2 flex items-center justify-between">
+        <div>
+          <div className="font-bold text-2xl mb-2">{work.title}</div>
           <div className="flex flex-wrap -m-1 mb-5">
             {work.badges.map((badge, index) => (
               <a
@@ -32,6 +28,15 @@ const WorkCard = ({ work }: ProjectCardProps) => {
           >
             View Details
           </Link>
+        </div>
+        <div>
+          <Image
+            className="rounded w-full"
+            src={work.imageSrc}
+            alt={'work'}
+            width={100}
+            height={100}
+          />
         </div>
       </div>
     </div>
